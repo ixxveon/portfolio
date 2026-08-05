@@ -3,7 +3,7 @@ import { useState } from "react";
 import { troubles } from "../data/portfolio";
 
 const TROUBLE_IMAGES: Record<number, { before: string; after: string }> = {
-  0: { before: "/trouble-ci-success.png", after: "/trouble-diff.png" },
+  0: { before: "/trouble-diff.png", after: "/trouble-ci-success.png" },
 };
 
 export default function TroubleShooting(): React.JSX.Element {
