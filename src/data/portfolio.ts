@@ -90,11 +90,12 @@ export const projects: Project[] = [
     team: "6인 팀 프로젝트 (파이널)",
     description:
       "AI 기반 취업 준비 플랫폼. 면접 연습, 이력서 분석, 자기소개서 생성 기능을 제공합니다.",
-    role: "백엔드 개발 / 면접 도메인 리드",
-    techStack: ["Java 21", "Spring Boot", "FastAPI", "WebSocket", "STOMP", "MySQL", "Redis"],
+    role: "풀스택 개발 / 면접 도메인 리드 (백엔드 중심, 프론트·FastAPI 포함)",
+    techStack: ["Java 21", "Spring Boot", "FastAPI", "WebSocket", "STOMP", "MySQL", "Redis", "React", "TypeScript"],
     highlights: [
       "실시간 AI 면접 스트리밍 파이프라인 설계 — Spring이 요청을 받아 FastAPI로 전달, AI 응답을 WebSocket으로 클라이언트에 스트리밍",
-      "면접 이력 전체 보기 페이지 구현 및 홈 위젯 연결 (페이지네이션 포함)",
+      "FastAPI 엔드포인트 구현 — AI 모델 연동 및 응답 처리",
+      "면접 이력 전체 보기 페이지 구현 및 홈 위젯 연결 (페이지네이션 포함, React + TypeScript)",
       "ErrorCode를 global 공통 + 도메인별 파일로 분리하는 아키텍처 팀 합의 주도",
       "팀 컨벤션 문서 기반 PR 리뷰 — Must Fix / Should Fix 기준으로 코드 품질 관리",
     ],
@@ -107,8 +108,8 @@ export const projects: Project[] = [
     team: "6인 팀 프로젝트 (미니)",
     description:
       "지도에서 장소를 선택하면 AI가 해당 장소 맞춤 영어 회화 상황을 생성하고, 말하기 분석 및 피드백을 제공하는 AI 기반 영어 학습 플랫폼",
-    role: "백엔드 개발 — Learning / Social / Favorite / Ranking / Chat 도메인 담당",
-    techStack: ["Java", "Spring Boot", "JPA", "MySQL", "Redis", "WebSocket", "STOMP"],
+    role: "풀스택 개발 — Learning / Social / Favorite / Ranking / Chat 도메인 담당 (백엔드 중심, 프론트 포함)",
+    techStack: ["Java", "Spring Boot", "JPA", "MySQL", "Redis", "WebSocket", "STOMP", "React", "TypeScript"],
     highlights: [
       "친구 관계를 PENDING → ACCEPTED / REJECTED / BLOCKED 상태 머신으로 설계, 중복 요청 및 자기 자신 요청 방어 로직 포함",
       "study_score 집계 쿼리 기반 전체/주간/친구 랭킹 구현 — ACCEPTED 관계인 친구만 친구 랭킹에 포함",
