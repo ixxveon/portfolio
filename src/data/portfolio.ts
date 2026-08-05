@@ -73,6 +73,14 @@ export const skills: SkillItem[] = [
       { name: "Tailwind CSS", project: "MapInGo · CareerWave" },
     ],
   },
+  {
+    category: "Tools",
+    items: [
+      { name: "Git / GitHub", project: "MapInGo · CareerWave" },
+      { name: "Swagger", project: "MapInGo · CareerWave" },
+      { name: "Postman", project: "MapInGo · CareerWave" },
+    ],
+  },
 ];
 
 export const projects: Project[] = [
