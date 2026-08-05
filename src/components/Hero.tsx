@@ -18,7 +18,6 @@ const FOCUS = [
 const LEARNING = [
   "Spring Security · OAuth2.0",
   "JPA 성능 최적화 (N+1, 인덱스)",
-  "알고리즘 · 코딩 테스트",
 ];
 
 export default function Hero(): React.JSX.Element {
