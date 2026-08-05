@@ -67,10 +67,10 @@ export const skills: SkillItem[] = [
   {
     category: "Frontend",
     items: [
-      { name: "React", project: "포트폴리오" },
-      { name: "TypeScript", project: "CareerWave · 포트폴리오" },
+      { name: "React", project: "MapInGo · CareerWave" },
+      { name: "TypeScript", project: "MapInGo · CareerWave" },
       { name: "TanStack Query", project: "CareerWave" },
-      { name: "Tailwind CSS", project: "CareerWave · 포트폴리오" },
+      { name: "Tailwind CSS", project: "MapInGo · CareerWave" },
     ],
   },
 ];
