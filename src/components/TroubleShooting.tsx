@@ -1,33 +1,44 @@
+import { motion } from "framer-motion";
 import { troubles } from "../data/portfolio";
 
 export default function TroubleShooting(): React.JSX.Element {
   return (
     <section id="trouble" className="py-24 px-6 max-w-5xl mx-auto w-full">
-      <div>
-        <p className="text-xs text-indigo-400 uppercase tracking-widest mb-2">Trouble Shooting</p>
-        <h2 className="text-3xl font-bold text-white">문제 해결 경험</h2>
-      </div>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
+        <p className="text-xs text-indigo-500 uppercase tracking-widest mb-2 font-semibold">Trouble Shooting</p>
+        <h2 className="text-3xl font-bold text-gray-900 mb-3">문제 해결 경험</h2>
+        <p className="text-gray-500 mb-12">실제 프로젝트에서 마주친 기술적 문제와 해결 과정을 기록합니다.</p>
+      </motion.div>
 
-      <div className="flex flex-col gap-6 mt-12">
-        {troubles.map((item) => (
-          <article
+      <div className="flex flex-col gap-6">
+        {troubles.map((item, i) => (
+          <motion.article
             key={item.title}
-            className="bg-gray-900 border border-gray-800 rounded-2xl p-8 hover:border-gray-600 transition-colors"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: i * 0.1 }}
+            className="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-md hover:border-indigo-200 transition-all"
           >
             <div className="mb-6">
-              <span className="text-xs px-2 py-1 bg-indigo-500/20 text-indigo-400 rounded-md border border-indigo-500/30">
+              <span className="text-xs px-2 py-1 bg-indigo-50 text-indigo-600 rounded-md border border-indigo-100 font-medium">
                 {item.project}
               </span>
-              <h3 className="text-xl font-bold text-white mt-3">{item.title}</h3>
+              <h3 className="text-xl font-bold text-gray-900 mt-3">{item.title}</h3>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <StarItem color="yellow" label="S — Situation" content={item.situation} />
-              <StarItem color="red" label="T — Task" content={item.cause} />
-              <StarItem color="blue" label="A — Action" content={item.action} />
-              <StarItem color="green" label="R — Result" content={item.result} />
+              <StarItem color="red" label="Problem — 문제 상황" content={item.situation} />
+              <StarItem color="yellow" label="Cause — 원인 분석" content={item.cause} />
+              <StarItem color="blue" label="Solution — 해결 방법" content={item.action} />
+              <StarItem color="green" label="Takeaway — 배운 점" content={item.result} />
             </div>
-          </article>
+          </motion.article>
         ))}
       </div>
     </section>
@@ -37,17 +48,17 @@ export default function TroubleShooting(): React.JSX.Element {
 type StarColor = "yellow" | "red" | "blue" | "green";
 
 const COLOR_MAP: Record<StarColor, string> = {
-  yellow: "border-yellow-500/30 bg-yellow-500/5",
-  red: "border-red-500/30 bg-red-500/5",
-  blue: "border-blue-500/30 bg-blue-500/5",
-  green: "border-green-500/30 bg-green-500/5",
+  yellow: "border-amber-200 bg-amber-50",
+  red: "border-red-200 bg-red-50",
+  blue: "border-blue-200 bg-blue-50",
+  green: "border-green-200 bg-green-50",
 };
 
 const LABEL_COLOR_MAP: Record<StarColor, string> = {
-  yellow: "text-yellow-400",
-  red: "text-red-400",
-  blue: "text-blue-400",
-  green: "text-green-400",
+  yellow: "text-amber-600",
+  red: "text-red-600",
+  blue: "text-blue-600",
+  green: "text-green-600",
 };
 
 function StarItem({
@@ -61,10 +72,10 @@ function StarItem({
 }): React.JSX.Element {
   return (
     <div className={`rounded-xl p-4 border ${COLOR_MAP[color]}`}>
-      <p className={`text-xs font-semibold uppercase tracking-widest mb-2 ${LABEL_COLOR_MAP[color]}`}>
+      <p className={`text-xs font-bold uppercase tracking-widest mb-2 ${LABEL_COLOR_MAP[color]}`}>
         {label}
       </p>
-      <p className="text-gray-300 text-sm leading-relaxed">{content}</p>
+      <p className="text-gray-700 text-sm leading-relaxed">{content}</p>
     </div>
   );
 }
