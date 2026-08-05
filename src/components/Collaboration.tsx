@@ -33,7 +33,7 @@ const COLLAB_ITEMS: CollabItem[] = [
     badgeColor: "bg-emerald-100 text-emerald-700 border-emerald-200",
     description:
       "feature/{이슈번호}-{설명} 형식으로 브랜치를 관리하고, develop → main 머지 전략으로 안정성을 유지했습니다. 커밋 메시지는 {type}({branch}) : {summary} 형식을 팀 전체가 준수했습니다.",
-    image: "/collab-branch.png",
+    image: "/branchgraph.png",
     imageAlt: "Git 브랜치 그래프",
     annotation: "feature 브랜치가 develop으로 머지되는 실제 네트워크 그래프",
     imageLeft: true,
