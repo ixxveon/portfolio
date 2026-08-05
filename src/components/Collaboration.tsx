@@ -4,6 +4,7 @@ import { collabs } from "../data/portfolio";
 
 const REVIEW_IMAGES = [
   { src: "/review.png", caption: "PR 리뷰 — timeout fallback 엣지케이스 지적 및 해결" },
+  { src: "/merged.png", caption: "머지된 PR 목록 — 팀 협업 이력" },
 ];
 
 export default function Collaboration(): React.JSX.Element {
