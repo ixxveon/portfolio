@@ -2,8 +2,21 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { troubles } from "../data/portfolio";
 
-const TROUBLE_IMAGES: Record<number, { before: string; after: string }> = {
-  0: { before: "/trouble-diff.png", after: "/trouble-ci-success.png" },
+interface TroubleImages {
+  before: string;
+  after: string;
+  beforeNote?: string;
+  afterNote?: string;
+}
+
+const TROUBLE_IMAGES: Record<number, TroubleImages> = {
+  0: {
+    before: "/trouble-stomp-before.png",
+    after: "/trouble-stomp-after.png",
+    beforeNote: "SUBSCRIBE 처리(preSend) 중에 바로 스냅샷을 보내던 코드",
+    afterNote: "구독 등록이 끝난 뒤 실행되는 SessionSubscribeEvent 리스너로 이동",
+  },
+  1: { before: "/trouble-diff.png", after: "/trouble-ci-success.png" },
 };
 
 export default function TroubleShooting(): React.JSX.Element {
@@ -61,7 +74,7 @@ export default function TroubleShooting(): React.JSX.Element {
                     src={TROUBLE_IMAGES[i].before}
                     badge="Before"
                     badgeColor="bg-red-500"
-                    annotation="문제 발생 당시 에러 로그 / 콘솔 화면"
+                    annotation={TROUBLE_IMAGES[i].beforeNote ?? "문제 발생 당시 에러 로그 / 콘솔 화면"}
                     onClick={() => setLightbox(TROUBLE_IMAGES[i].before)}
                   />
                   <div className="flex items-center gap-2 text-gray-300">
@@ -73,9 +86,24 @@ export default function TroubleShooting(): React.JSX.Element {
                     src={TROUBLE_IMAGES[i].after}
                     badge="After"
                     badgeColor="bg-emerald-500"
-                    annotation="수정된 코드 diff — 빨강(삭제) / 초록(추가)"
+                    annotation={TROUBLE_IMAGES[i].afterNote ?? "수정된 코드 diff — 빨강(삭제) / 초록(추가)"}
                     onClick={() => setLightbox(TROUBLE_IMAGES[i].after)}
                   />
+                  {item.commits && (
+                    <div className="flex flex-col gap-1.5 pt-1">
+                      {item.commits.map((commit) => (
+                        <a
+                          key={commit.url}
+                          href={commit.url}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="text-xs text-gray-500 hover:text-indigo-600 transition-colors"
+                        >
+                          🔗 실제 커밋 보기 — {commit.label}
+                        </a>
+                      ))}
+                    </div>
+                  )}
                 </div>
               )}
             </div>

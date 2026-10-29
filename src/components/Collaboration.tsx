@@ -50,6 +50,18 @@ const COLLAB_ITEMS: CollabItem[] = [
     annotation: "스프린트 단위로 관리된 태스크 보드 — 역할 분담과 진척 공유",
     imageLeft: false,
   },
+  {
+    icon: "🤖",
+    keyword: "AI-Assisted Development",
+    headline: "AI도 팀 규칙을 따르게 만들다",
+    badgeColor: "bg-amber-100 text-amber-700 border-amber-200",
+    description:
+      "Claude Code로 구현과 리뷰를 하면서, 팀 컨벤션과 리뷰 기준(Must Fix / Should Fix)을 CLAUDE.md로 정리해 AI가 같은 규칙으로 코드를 작성하고 리뷰하도록 했습니다. AI가 만든 코드도 CodeRabbit과 팀원 리뷰로 한 번 더 검증하고, 학습이 필요한 코드는 직접 타이핑하며 이해한 뒤 반영했습니다.",
+    image: "/collab-ai.png",
+    imageAlt: "위닝픽 CLAUDE.md",
+    annotation: "브랜치·커밋·패키지 구조 등 팀 컨벤션을 AI용 체크리스트로 정리한 실제 문서",
+    imageLeft: true,
+  },
 ];
 
 export default function Collaboration(): React.JSX.Element {

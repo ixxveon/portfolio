@@ -16,7 +16,7 @@ const FOCUS = [
 ];
 
 const LEARNING = [
-  "Spring Security · OAuth2.0",
+  "AWS 배포 · 모니터링",
   "JPA 성능 최적화 (N+1, 인덱스)",
 ];
 
@@ -56,14 +56,6 @@ export default function Hero(): React.JSX.Element {
                 className="px-5 py-2.5 bg-gray-900 text-white rounded-lg text-sm font-medium hover:bg-gray-700 transition-colors"
               >
                 GitHub
-              </a>
-              <a
-                href="/resume.pdf"
-                target="_blank"
-                rel="noreferrer"
-                className="px-5 py-2.5 bg-indigo-600 text-white rounded-lg text-sm font-semibold hover:bg-indigo-500 transition-colors"
-              >
-                이력서 보기
               </a>
               <a
                 href={`mailto:${profile.email}`}

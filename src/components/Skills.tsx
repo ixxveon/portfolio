@@ -5,6 +5,7 @@ import { skills } from "../data/portfolio";
 const PROJECT_BADGE: Record<string, string> = {
   CareerWave: "bg-indigo-50 text-indigo-600 border-indigo-200",
   MapInGo: "bg-emerald-50 text-emerald-600 border-emerald-200",
+  WinningPick: "bg-amber-50 text-amber-600 border-amber-200",
   "MapInGo · CareerWave": "", // split 처리
 };
 
@@ -14,6 +15,8 @@ const TECH_ICON: Record<string, React.ReactNode> = {
   "Spring Boot": <Dot color="#6db33f" />,
   JPA: <Dot color="#59666c" />,
   MySQL: <Dot color="#4479a1" />,
+  PostgreSQL: <Dot color="#336791" />,
+  "AWS S3": <Dot color="#ff9900" />,
   Redis: <Dot color="#dc382d" />,
   WebSocket: <Dot color="#7c3aed" />,
   STOMP: <Dot color="#6366f1" />,
